@@ -1,7 +1,7 @@
 {
   "name": "the-airline",
   "version": "1.0.0",
-  "description": "",
+  "description": "**Source template for my Udemy Ethereum training course at Udemy**",
   "main": "src/index.js",
   "directories": {
     "test": "test"
@@ -28,5 +28,13 @@
     "webpack-dev-server": "3.1.5"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jesuscdm/udemy-ethereum-the-airline.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jesuscdm/udemy-ethereum-the-airline/issues"
+  },
+  "homepage": "https://github.com/jesuscdm/udemy-ethereum-the-airline#readme"
 }

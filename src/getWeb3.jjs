@@ -1,0 +1,43 @@
+
+// IMPORTAMOS WEB3
+//import Web3 from 'web3';
+const Web3 = require ('web3');
+const ethEnabled = async ()=>{
+    if (window.ethereum){
+        await window.ethereum.send('eth_requestAccounts');
+        window.web3 =new Web3 (window.ethereum);
+        return true;
+    }
+    return false;
+}
+//import {resolve} from 'path';
+//import { reject } from 'any-promise';
+//FUNCION QUE DEVUELVE UNA PROMESA
+/*const getWeb3 = () => {
+    return new Promise ((resolve,reject)=>{
+        //Esperar que la pagina se ha cargado para saber que la extensión se ha cargado
+       window.addEventListener ('load',function (){
+           let web3 = window.web3;
+
+           /*Saber si web3 está disponible en el navegador
+            lo que indica que Metamask está instalado */
+
+           if (typeof web3 !== undefined){
+               /* Utilizamos el constructor de web3 y el constructor de web3 
+               recive un proveedor que en este caso es Metamask*/
+               web3 = new Web3 (web3.currentProvider);
+               //resolver la promesa devolviendo web3
+               resolve (web3);
+               //Sino damos un error de que no está instalado Metamask
+           } else {
+               console.error ("No provider found, please install Metamask");
+               //Si no se ha encontrado el proveedor hacemos un reject de la promesa
+               reject ();
+           }
+       }); 
+
+    });
+};
+//Exportamos la funcion
+
+export default getWeb3;
